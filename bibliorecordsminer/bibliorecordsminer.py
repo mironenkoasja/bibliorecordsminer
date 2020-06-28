@@ -30,7 +30,9 @@ NUM = '[0-9]'
 YEAR = r'(?P<year>(2[ ]?0[  ]?[0|1|2][ ]?[0-9])|(1[ ]?9[ ]?[0-9][ ]?[0-9]))'
 # YEAR = r'(?P<year>(20[0|1|2][0-9])|(19[9|8|7|6][0-9]))'
 # TO DOOOOOOOOO
-LIST_TYPES = list(pd.read_excel('D:/python/remote_config/ml_training/KG/docs/types_cleaned.xlsx', index=False)['types'])
+
+types_path = os.path.dirname(os.path.abspath(__file__))
+LIST_TYPES = list(pd.read_excel(types_path+'/types_cleaned.xlsx', index=False)['types'])
 NEGATIVE_EXAMPLE = ['//', 'html', '?', '.pdf']
 
 # Split pdf to paragraph
